@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perka.Apply", "Perka.Apply\Perka.Apply.csproj", "{35F2F58F-BD4D-4D54-B20E-9F6410E5386D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{376F7B14-98AE-4672-9D5B-F9B476285067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perka.Apply.UnitTests", "UnitTests\Perka.Apply.UnitTests\Perka.Apply.UnitTests.csproj", "{B2F67E7E-55EF-4930-A961-273614665CF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35F2F58F-BD4D-4D54-B20E-9F6410E5386D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F2F58F-BD4D-4D54-B20E-9F6410E5386D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F2F58F-BD4D-4D54-B20E-9F6410E5386D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F2F58F-BD4D-4D54-B20E-9F6410E5386D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F67E7E-55EF-4930-A961-273614665CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F67E7E-55EF-4930-A961-273614665CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F67E7E-55EF-4930-A961-273614665CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F67E7E-55EF-4930-A961-273614665CF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2F67E7E-55EF-4930-A961-273614665CF3} = {376F7B14-98AE-4672-9D5B-F9B476285067}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {921C6653-75A4-4543-9B10-252EB9424A98}
+	EndGlobalSection
+EndGlobal
