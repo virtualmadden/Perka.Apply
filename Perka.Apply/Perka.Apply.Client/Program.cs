@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Perka.Apply
+namespace Perka.Apply.Client
 {
     internal class Program
     {

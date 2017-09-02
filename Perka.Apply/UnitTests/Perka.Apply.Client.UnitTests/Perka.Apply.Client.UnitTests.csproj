@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Perka.Apply\Perka.Apply.csproj" />
+    <ProjectReference Include="..\..\Perka.Apply.Client\Perka.Apply.Client.csproj" />
   </ItemGroup>
 
 </Project>

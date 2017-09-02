@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Perka.Apply.Models
+namespace Perka.Apply.Client.Models
 {
     internal class ApplicationRequest
     {

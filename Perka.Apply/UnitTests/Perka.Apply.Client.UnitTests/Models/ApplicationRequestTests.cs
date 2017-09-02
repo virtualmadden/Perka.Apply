@@ -1,4 +1,4 @@
-﻿namespace Perka.Apply.UnitTests.Models
+﻿namespace Perka.Apply.Client.UnitTests.Models
 {
     public class ApplicationRequestTests
     {

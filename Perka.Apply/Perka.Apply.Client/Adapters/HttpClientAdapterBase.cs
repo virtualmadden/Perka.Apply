@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Perka.Apply.Adapters
+namespace Perka.Apply.Client.Adapters
 {
     internal abstract class HttpClientAdapterBase : IDisposable
     {

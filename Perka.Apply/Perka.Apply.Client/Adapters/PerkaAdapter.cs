@@ -1,9 +1,8 @@
 ﻿using System.Net.Http.Headers;
-using System.Threading.Tasks;
 
-namespace Perka.Apply.Adapters
+namespace Perka.Apply.Client.Adapters
 {
-    internal class GithubAdapter : HttpClientAdapterBase
+    internal class PerkaAdapter : HttpClientAdapterBase
     {
         protected override void SetHttpHeaders()
         {
