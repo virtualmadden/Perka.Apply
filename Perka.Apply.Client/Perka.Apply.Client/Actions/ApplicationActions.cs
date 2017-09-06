@@ -46,12 +46,7 @@ namespace Perka.Apply.Client.Actions
 
                 var response = PostApplicationToPerka(applicationRequest);
 
-                if (response.Response.Equals("You did it!"))
-                {
-                    return true;
-                }
-
-                return false;
+                return response.Response.Equals("You did it!");
             }
             catch (Exception e)
             {
