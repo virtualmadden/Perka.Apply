@@ -1,2 +1,13 @@
 # Perka.Apply.Client
-A simple C# console app to apply for jobs at Perka.
+
+`Perka.Apply.Client` is a C# .NET Core 2.0 implementation of the Perka application process.
+
+## Build
+
+To build this application we are using Cake.
+
+On Windows Powershell run:
+
+```powershell
+./build
+```
