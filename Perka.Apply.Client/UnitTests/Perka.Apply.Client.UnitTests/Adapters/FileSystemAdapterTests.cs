@@ -15,6 +15,7 @@ namespace Perka.Apply.Client.UnitTests.Adapters
         {
             _fileHelperMoq = new Mock<IFileHelper>();
 
+            _fileHelperMoq.Setup(x => x.ValidateWritePermissions(It.IsAny<string>())).Returns(true);
             _fileHelperMoq.Setup(x => x.GetFileInfo(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>())).Returns(new FileInfo("test"));
             _fileHelperMoq.Setup(x => x.ReadFileContentsAsBytes(It.IsAny<string>())).Returns(new[] {new byte(), new byte()});
 
