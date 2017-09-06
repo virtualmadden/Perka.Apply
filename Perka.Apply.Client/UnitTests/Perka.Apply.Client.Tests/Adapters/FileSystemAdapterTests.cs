@@ -5,7 +5,7 @@ using NUnit.Framework;
 using Perka.Apply.Client.Adapters;
 using Perka.Apply.Client.Helpers;
 
-namespace Perka.Apply.Client.UnitTests.Adapters
+namespace Perka.Apply.Client.Tests.Adapters
 {
     [TestFixture]
     public class FileSystemAdapterTests

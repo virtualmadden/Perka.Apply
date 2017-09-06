@@ -5,7 +5,7 @@ using Perka.Apply.Client.Actions;
 using Perka.Apply.Client.Adapters;
 using Perka.Apply.Client.Models;
 
-namespace Perka.Apply.Client.UnitTests.Actions
+namespace Perka.Apply.Client.Tests.Actions
 {
     [TestFixture]
     public class PerkaActionTests

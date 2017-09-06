@@ -5,7 +5,7 @@ using NUnit.Framework;
 using Perka.Apply.Client.Actions;
 using Perka.Apply.Client.Adapters;
 
-namespace Perka.Apply.Client.UnitTests.Actions
+namespace Perka.Apply.Client.Tests.Actions
 {
     [TestFixture]
     public class GithubActionsTests
