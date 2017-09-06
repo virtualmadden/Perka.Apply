@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Perka.Apply.Client.Models
 {
-    internal class ApplicationRequest
+    public class PerkaApplicationRequest
     {
         [JsonProperty("first_name")]
         public string FirstName { get; set; }

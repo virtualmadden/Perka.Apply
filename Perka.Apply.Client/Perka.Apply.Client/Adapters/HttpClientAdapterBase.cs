@@ -1,23 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Perka.Apply.Client.Adapters
 {
-    internal abstract class HttpClientAdapterBase : IDisposable
+    public abstract class HttpClientAdapterBase : IDisposable
     {
         internal const string ContentType = "application/json";
+
+        private static readonly List<HttpStatusCode> IoExceptionStatusCodes = new List<HttpStatusCode>
+        {
+            HttpStatusCode.GatewayTimeout,
+            HttpStatusCode.BadGateway,
+            HttpStatusCode.ServiceUnavailable
+        };
 
         private readonly HttpMessageHandler _handler;
         internal HttpClient Client;
 
-        protected HttpClientAdapterBase() : this(null)
-        {
-        }
-
         protected HttpClientAdapterBase(HttpMessageHandler handler)
         {
+            InitializeClient();
             _handler = handler;
         }
 
@@ -80,6 +86,29 @@ namespace Perka.Apply.Client.Adapters
             {
                 throw new TimeoutException("HTTP operation timed out.", exception);
             }
+        }
+
+        protected async Task<string> HandleResponse(HttpResponseMessage response)
+        {
+            if (response == null)
+                throw new ArgumentNullException(nameof(response), "returned no response.");
+
+            var content = response.Content != null ? await response.Content.ReadAsStringAsync() : null;
+
+            if (response.IsSuccessStatusCode)
+                return content;
+
+            HandleFailedResponse(response.StatusCode, response.RequestMessage?.RequestUri, content);
+
+            return content;
+        }
+
+        private static void HandleFailedResponse(HttpStatusCode statusCode, Uri requestUri, string error)
+        {
+            if (IoExceptionStatusCodes.Contains(statusCode))
+                throw new IOException($"Http exception: {statusCode} Reason: {error}");
+
+            throw new Exception($"Unhandled response from {requestUri}.\n" + $"Http message failure. {Environment.NewLine} Status Code: {statusCode} {Environment.NewLine} Reason: {error}");
         }
     }
 }

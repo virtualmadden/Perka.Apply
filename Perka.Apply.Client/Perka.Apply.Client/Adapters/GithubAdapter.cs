@@ -1,13 +1,42 @@
-﻿using System.Net.Http.Headers;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Perka.Apply.Client.Adapters
 {
-    internal class GithubAdapter : HttpClientAdapterBase
+    public interface IGithubApiAdapter
     {
+        Task<string> GetOrdersAsync();
+    }
+
+    public class GithubAdapter : HttpClientAdapterBase, IGithubApiAdapter
+    {
+        private const string Endpoint = "https://api.github.com/users/virtualmadden/repos?type=all";
+
+        public GithubAdapter() : this(null)
+        {
+        }
+
+        private GithubAdapter(HttpMessageHandler handler) : base(handler)
+        {
+        }
+
+        public async Task<string> GetOrdersAsync()
+        {
+            try
+            {
+                return await HandleResponse(await GetAsync(new Uri(Endpoint)));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         protected override void SetHttpHeaders()
         {
-            Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(ContentType));
+            Client.DefaultRequestHeaders.UserAgent.ParseAdd("Perka.Apply.Client/1.0");
         }
     }
 }
