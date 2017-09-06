@@ -11,7 +11,7 @@ namespace Perka.Apply.Client.Adapters
 
     public class GithubAdapter : HttpClientAdapterBase, IGithubApiAdapter
     {
-        private const string Endpoint = "https://api.github.com/users/virtualmadden/repos?type=all";
+        private readonly string _endpoint = ApplicationSettingsAdapter.ApplicationSettings.GithubApi.Uri;
 
         public GithubAdapter() : this(null)
         {
@@ -25,7 +25,7 @@ namespace Perka.Apply.Client.Adapters
         {
             try
             {
-                return await HandleResponse(await GetAsync(new Uri(Endpoint)));
+                return await HandleResponse(await GetAsync(new Uri(_endpoint)));
             }
             catch (Exception e)
             {

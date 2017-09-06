@@ -28,21 +28,11 @@ namespace Perka.Apply.Client.Actions
         {
             try
             {
-                var result = GetGithubProjects();
+                var projects = GetGithubProjects();
 
                 var resumeContents = GetEncryptedResume();
 
-                var applicationRequest = new PerkaApplicationRequest
-                {
-                    FirstName = "Jonathan",
-                    LastName = "Madden",
-                    Email = "virtualmadden@gmail.com",
-                    PositionId = "GENERALIST",
-                    Explanation = "Custom C# Leveraging HTTPClient - https://github.com/virtualmadden/Perka.Apply.Client",
-                    Projects = result.Select(x => $"{x.Name} - {x.Uri}").ToList(),
-                    Source = "Perka.com",
-                    Resume = resumeContents
-                };
+                var applicationRequest = MapToRequest(projects, resumeContents);
 
                 var response = PostApplicationToPerka(applicationRequest);
 
@@ -63,6 +53,21 @@ namespace Perka.Apply.Client.Actions
         private string GetEncryptedResume()
         {
             return _fileSystemAdapter.GetBase64EncodedResume();
+        }
+
+        private static PerkaApplicationRequest MapToRequest(IEnumerable<GithubProjectResponse> projects, string resumeContents)
+        {
+            return new PerkaApplicationRequest
+            {
+                FirstName = ApplicationSettingsAdapter.ApplicationSettings.FirstName,
+                LastName = ApplicationSettingsAdapter.ApplicationSettings.LastName,
+                Email = ApplicationSettingsAdapter.ApplicationSettings.Email,
+                PositionId = ApplicationSettingsAdapter.ApplicationSettings.PositionId,
+                Explanation = ApplicationSettingsAdapter.ApplicationSettings.Explanation,
+                Projects = projects.Select(x => $"{x.Name} - {x.Uri}").ToList(),
+                Source = ApplicationSettingsAdapter.ApplicationSettings.Source,
+                Resume = resumeContents
+            };
         }
 
         private PerkaApplicationResponse PostApplicationToPerka(PerkaApplicationRequest applicationRequest)

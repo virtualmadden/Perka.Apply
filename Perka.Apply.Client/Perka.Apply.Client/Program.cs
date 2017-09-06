@@ -7,7 +7,7 @@ namespace Perka.Apply.Client
     {
         private static readonly IApplicationActions ApplicationActions = new ApplicationActions();
 
-        private static void Main(string[] args)
+        private static void Main(string[] args = null)
         {
             Console.WriteLine(ApplicationActions.Apply() ? "Success!" : "Failure!");
         }

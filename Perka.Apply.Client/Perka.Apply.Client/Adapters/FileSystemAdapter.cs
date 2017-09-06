@@ -13,9 +13,9 @@ namespace Perka.Apply.Client.Adapters
     {
         private readonly FileConfiguration _fileConfiguration = new FileConfiguration
         {
-            Name = "jon_madden_resume",
-            Location = "F:\\Downloads\\",
-            Extension = ".pdf"
+            Name = ApplicationSettingsAdapter.ApplicationSettings.Resume.Name,
+            Location = ApplicationSettingsAdapter.ApplicationSettings.Resume.Location,
+            Extension = ApplicationSettingsAdapter.ApplicationSettings.Resume.Extension
         };
 
         private readonly IFileHelper _fileHelper;

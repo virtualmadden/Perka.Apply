@@ -13,7 +13,7 @@ namespace Perka.Apply.Client.Adapters
 
     internal class PerkaApiAdapter : HttpClientAdapterBase, IPerkaApiAdapter
     {
-        private const string Endpoint = "https://api.perka.com/1/communication/job/apply";
+        private readonly string _endpoint = ApplicationSettingsAdapter.ApplicationSettings.PerkaApi.Uri;
 
         public PerkaApiAdapter() : this(null)
         {
@@ -27,7 +27,7 @@ namespace Perka.Apply.Client.Adapters
         {
             try
             {
-                return await HandleResponse(await PostAsync(new Uri(Endpoint), new StringContent(body ?? "", Encoding.UTF8, ContentType)));
+                return await HandleResponse(await PostAsync(new Uri(_endpoint), new StringContent(body ?? "", Encoding.UTF8, ContentType)));
             }
             catch (Exception e)
             {
