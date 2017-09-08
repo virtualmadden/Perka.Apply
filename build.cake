@@ -40,7 +40,7 @@ Task("Restore-NuGet-Packages")
     .Description("Restoring NuGet packages.")
     .Does(() =>
 {
-    NuGetRestore(solution);
+    DotNetCoreRestore(solution);
 });
 
 Task("Build")
