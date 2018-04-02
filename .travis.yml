@@ -1,0 +1,10 @@
+language: csharp
+mono: none
+dotnet: 2.1.103
+script:
+  - dotnet restore
+  - dotnet build
+  - dotnet test Perka.Apply.Client.Tests/Perka.Apply.Client.Tests.csproj
+branches:
+  only:
+    - master

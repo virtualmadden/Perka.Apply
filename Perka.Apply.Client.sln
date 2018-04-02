@@ -5,9 +5,7 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Perka.Apply.Client", "Perka.Apply.Client\Perka.Apply.Client.csproj", "{35F2F58F-BD4D-4D54-B20E-9F6410E5386D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{376F7B14-98AE-4672-9D5B-F9B476285067}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Perka.Apply.Client.Tests", "UnitTests\Perka.Apply.Client.Tests\Perka.Apply.Client.Tests.csproj", "{B2F67E7E-55EF-4930-A961-273614665CF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Perka.Apply.Client.Tests", "Perka.Apply.Client.Tests\Perka.Apply.Client.Tests.csproj", "{B2F67E7E-55EF-4930-A961-273614665CF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
