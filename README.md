@@ -1,13 +1,7 @@
-# Perka.Apply.Client
-
+# Perka Apply Client
 `Perka.Apply.Client` is a C# .NET Core 2.0 implementation of the Perka application process.
 
-## Build
-
-To build this application we are using Cake.
-
-On Windows Powershell run:
-
-```powershell
-./build
-```
+## Build Status
+|Master|
+|:--:|
+|[![Build Status](https://travis-ci.org/virtualmadden/Perka.Apply.Client.svg?branch=master)](https://travis-ci.org/virtualmadden/Perka.Apply.Client)|
